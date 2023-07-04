@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .content {
+      max-height: 100px;
+      overflow: hidden;
+    }
+    
+    .read-more-link {
+      display: none;
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+  
+  <script>
+    function toggleContent() {
+      var content = document.getElementById("content");
+      var link = document.getElementById("read-more-link");
+      
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        link.innerHTML = "Read More";
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        link.innerHTML = "Read Less";
+      }
+    }
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      var content = document.getElementById("content");
+      var link = document.getElementById("read-more-link");
+      
+      if (content.scrollHeight > content.clientHeight) {
+        link.style.display = "inline";
+      }
+      
+      link.addEventListener("click", toggleContent);
+    });
+  </script>
+</head>
+<body>
+  <p id="content" class="content">
+    Don’t allow a little rust, surface scratches, light damage, or paint flaking force you to replace those important metal items. Let us work our magic to restore and improve them instead! Our skilled technicians will ensure the items for your home and auto are decorative and durable against the elements. Those metal materials and accessories that are essential to your business? We excel at knowing and perfecting which custom; protective coating can add years of dependable service and stand up against wear and tear. From the smallest parts, equipment, and valve covers to the largest machinery, construction materials, and fencing, we offer a custom specialty coating for any purpose in countless colours and textures that you will adore. We will complete your project promptly and at a competitive 
+  </p>
+  
+  <span id="read-more-link" class="read-more-link">Read More</span>
+</body>
+</html>
